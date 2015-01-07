@@ -101,7 +101,7 @@ Bank128 プリセット0 スタンダード
 	40	SD2
 	＋Bank128	の共通音色
 
-Bank128 プリセット0 付属ROM
+Bank128 プリセット1 付属ROM
 	20	fmprc1
 	21	fmprc2
 	22	fmprc3

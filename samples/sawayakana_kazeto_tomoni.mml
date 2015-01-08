@@ -1,0 +1,364 @@
+// for http://oto.chu.jp/
+
+ã»ñº{"Ç≥ÇÌÇ‚Ç©Ç»ïóÇ∆ã§Ç…"}
+çÏé“{"Ç»ÇÃ"}
+
+REV(127);
+îèéq 4,4
+
+System.vAdd=1
+System.TimeBase=10368
+Expression.Frequency(1);
+Modulation.Frequency(1);
+
+Int LOOP=5
+Tempo 100
+Key(0)
+Int NODTM=1
+
+Function LoopPlay(Str Mml, Int count) {
+	Str _MML
+	For (Int i = 1; i < LOOP + count; i++) {
+		_MML=_MML + #STR(Mml)
+	}
+	_MML
+}
+
+Function RandV(Int MIN, Int MAX) {
+	Str MML="v"
+	IF(NODTM=1) {
+		MML=MML+Random(MIN,MAX)
+	} ELSE {
+		MML=MML+#STR((MAX+MIN)/2)
+	}
+//	Print(MML)
+	MML
+}
+
+Str RMML
+Function RandR(Int MIN, Int MAX) {
+	Str MML=""
+//	RMML=""
+	IF(NODTM=-1) { //ñ≥å¯
+		MML=MML+"r"
+		RMML=RMML+"r"
+		Int VALUE=Random(0,10)
+		IF(VALUE<5) {
+			MML=MML+"-"
+		} ELSE {
+			RMML=RMML+"-"
+		}
+		Str RAND=Random(MIN,MAX)
+		MML=MML+RAND
+		RMML=RMML+RAND
+//		Print(MML)
+		MML
+	}
+}
+
+Function SyncR() {
+	Str MML=RMML
+	RMML=""
+//	Print(MML)
+	MML
+}
+
+#MELODY1={
+	l24
+	EP.T(127,110,!4,110,50,!4)b-2 rrEP(127)b->cr<b->e-8f12g
+	b-rgrre-rr<b->cr<EP.T(127,90,!4,90,00,!4)b- &b-2EP(127)>
+	EP.T(127,110,!4,110,50,!4)c2 rrEP(127)ce-rc e-8f12g
+	EP.T(127,110,!8,110,50,!8)b-4EP.T(127,110,!8,110,50,!8)a-4EP.T(127,110,!8,110,50,!8)g4EP.T(127,110,!8,110,50,!8)f4 <
+
+	EP.T(127,110,!4,110,50,!4)b-2 rrEP(127)b->cr<b->e-8f12g
+	b-rgrre-rr<b->cr<EP.T(127,90,!4,90,00,!4)b- &b-2EP(127)>
+	EP.T(127,110,!4,110,50,!4)c2 rrEP(127)ce-rc e-8f12g
+	EP.T(127,110,!4,110,110,!4,110,50,!2)b-1 EP(127)
+}
+
+#MELODY2={
+	<
+	r1r1r1r1
+}
+
+#MELODY3={
+	l24
+	EP.T(127,110,!4,110,50,!4)b-2 rrEP(127)b->cr<b->e-8f12g
+	b-rgrre-rr<b->cr<EP.T(127,90,!4,90,00,!4)b- &b-2EP(127)>
+	EP.T(127,110,!4,110,50,!4)c2 rrEP(127)ce-rc e-8f12g
+	EP.T(127,110,!8,110,50,!8)b-4EP.T(127,110,!8,110,50,!8)a-4EP.T(127,110,!8,110,50,!8)g4EP.T(127,110,!8,110,50,!8)f4 <
+
+	EP.T(127,110,!4,110,50,!4)b-2 rrEP(127)b->cr<b->e-8f12g
+	b-rgrre-rr<b->cr<EP.T(127,90,!4,90,00,!4)b- &b-2EP(127)>
+	EP.T(127,110,!4,110,50,!4)c2 rrEP(127)ce-rc e-8f12g
+	EP.T(127,110,!4,110,110,!4,110,50,!2)b-1 EP(127)
+}
+#MELODY4={
+	>
+	l24
+
+	EP.T(127,110,!4,110,50,!4)c2<EP.T(127,100,!8)d8EP.T(127,100,!8)e-&e-EP.T(127,100,!8)f&f8>EP.T(127,100,!8)d8<
+	EP.T(127,100,!4)b-4EP.T(127,100,!4)g8&g12EP.T(127,110,!4,110,50,!4)e- &e-2
+	EP.T(127,110,!4,110,50,!4)a-4.EP.T(127,100,!8)c8 EP.T(127,100,!8)d8EP.T(127,100,!8)e-&e-EP.T(127,100,!8)f&f8>EP.T(127,100,!8)c8<
+	EP.T(127,110,!4,110,110,!4,110,50,!2)b-1>
+
+	EP.T(127,110,!4,110,50,!4)c2<EP.T(127,100,!8)d8EP.T(127,100,!8)e-&e-EP.T(127,100,!8)f&f8>EP.T(127,100,!8)d8<
+	EP.T(127,100,!4)b-4EP.T(127,100,!4)g8&g12EP.T(127,110,!4,110,50,!4)e- &e-2
+	EP.T(127,110,!4,110,50,!4)a-4.EP.T(127,100,!8)c8 EP.T(127,100,!8.)d8.EP.T(127,100,!8.)e-8.EP.T(127,100,!8.)f8
+	EP.T(127,110,!8)e-8 EP(127)e-re- r12e- r12e- r2 
+}
+
+#CHORUS1={
+	q100
+	Sub {	r1r1		r1g4f4e-4d4		r1r1		r1g4f4e-4f4	}
+	Sub {	d1&d2.d4	e-1&e-1		d1&d2.d4	e-1d1		}
+	<
+	Sub {	b-1&b-2.b4>	c1&c1<		b-1&b-2.b4>	c1<b-1	}
+	Sub {	g1&g2.g+4	a-1&a-1		g1&g2.g+4	a-1a-1	}
+		e-1&e-2.e4	f1&f1			e-1&e-2.e4	f1f1
+}
+
+#CHORUS2={
+	q100
+	[3
+	>
+	Sub {	e-2 d2}
+	Sub {	c2 }
+	<
+	Sub {	a-2 b-2 }
+		f1
+	]
+	>
+	Sub {	g4f4e-4f4	}
+	Sub {	e-2d2		}
+	Sub {	c2<b-2	}
+	Sub {	a-1	}
+		f1
+	>
+}
+
+#CHORUS3={
+	q100
+	Sub {	r1r1		r1g4f4e-4d4		r1r1		r1g4f4e-4f4	}
+	Sub {	d1&d2.d4	e-1&e-1		d1&d2.d4	e-1d1		}
+	<
+	Sub {	b-1&b-2.b4>	c1&c1<		b-1&b-2.b4>	c1<b-1	}
+	Sub {	g1&g2.g+4	a-1&a-1		g1&g2.g+4	a-1a-1	}
+		e-1&e-2.e4	f1&f1			e-1&e-2.e4	f1f1
+}
+#CHORUS4={
+	q100
+	[3
+	>
+	Sub {	r1		f2r2		}
+	Sub {	e-2d2		d2e-2		}
+	Sub {	c2<b-2	b-2>c2	}
+	<
+		a-2f2		g2g2
+	]
+	>
+	Sub {	e-2r2		e-8 e-24r24e-24 r12e-24r12e-24		}
+	Sub {	c2d2		<b-8 b-24r24b-24 r12b-24r12b-24>		}
+	Sub {	<a-2b-2	g8 g24r24g24 r12g24r12g24	}
+		f2f2		e-8 e-24r24e-24 r12e-24r12e-24
+}
+
+#BASS1={
+	l24
+	@(SlapBass1)
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e-24r12<@(SlapBass1)e-24r12
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e24r12<@(SlapBass1)e24r12
+	f8&f12f24 r12>@(SlapBass2)f24<@(SlapBass1)r12f24 >@(SlapBass2)r12f24<@(SlapBass1)f24r12>@(SlapBass2) f24r12<@(SlapBass1)f24r12<@(SlapBass1)
+	b-8&b-12b-24 r12>@(SlapBass2)b-24<@(SlapBass1)r12b-24 >@(SlapBass2)r12b-24<@(SlapBass1)b-24r12>@(SlapBass2) b-24r12 b-24r24b-24
+
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e-24r12<@(SlapBass1)e-24r12
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e24r12<@(SlapBass1)e24r12
+	f8&f12f24 r12>@(SlapBass2)f24<@(SlapBass1)r12f24 >@(SlapBass2)r12f24<@(SlapBass1)f24r12>@(SlapBass2) f24r12<@(SlapBass1)f24r12<@(SlapBass1)
+	b-8&b-12b-24 r12>@(SlapBass2)b-24<@(SlapBass1)r12b-24 >@(SlapBass2)r12b-24<@(SlapBass1)b-24r12>@(SlapBass2) b-24r12 b-24r24b-24
+}
+
+#BASS2={
+	l24
+	[4
+	<
+	@(SlapBass1)
+	b-8&b-12b-24 r12>@(SlapBass2)b-24<@(SlapBass1)r12b-24 >@(SlapBass2)r12b-24<@(SlapBass1)b-24r12>@(SlapBass2) b-24r12 b-24r24b-24
+	]
+}
+
+#BASS3={
+	l24
+	@(SlapBass1)
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e-24r12<@(SlapBass1)e-24r12
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e24r12<@(SlapBass1)e24r12
+	f8&f12f24 r12>@(SlapBass2)f24<@(SlapBass1)r12f24 >@(SlapBass2)r12f24<@(SlapBass1)f24r12>@(SlapBass2) f24r12<@(SlapBass1)f24r12<@(SlapBass1)
+	b-8&b-12b-24 r12>@(SlapBass2)b-24<@(SlapBass1)r12b-24 >@(SlapBass2)r12b-24<@(SlapBass1)b-24r12>@(SlapBass2) b-24r12 b-24r24b-24
+
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e-24r12<@(SlapBass1)e-24r12
+	e-8&e-12e-24 r12>@(SlapBass2)e-24<@(SlapBass1)r12e-24 >@(SlapBass2)r12e-24<@(SlapBass1)e-24r12>@(SlapBass2) e24r12<@(SlapBass1)e24r12
+	f8&f12f24 r12>@(SlapBass2)f24<@(SlapBass1)r12f24 >@(SlapBass2)r12f24<@(SlapBass1)f24r12>@(SlapBass2) f24r12<@(SlapBass1)f24r12<@(SlapBass1)
+	b-8&b-12b-24 r12>@(SlapBass2)b-24<@(SlapBass1)r12b-24 >@(SlapBass2)r12b-24<@(SlapBass1)b-24r12>@(SlapBass2) b-24r12 b-24r24b-24
+}
+
+#BASS4={
+	<@(SlapBass1)
+	a-8&a-12a-24 >@(SlapBass2)r12a-24<@(SlapBass1)a-24r12 r12b-24b-24r12 b-8a-8
+	g8&g12g24 >@(SlapBass2)r12g24<@(SlapBass1)g24r12 >@(SlapBass2)r12c24c24r12 c8c8<@(SlapBass1)
+	a-8&a-12a-24 >@(SlapBass2)r12a-24<@(SlapBass1)a-24r12 r12b-24b-24r12 b-8a-8
+	g8&g12g24 >@(SlapBass2)r12g24<@(SlapBass1)g24r12 >@(SlapBass2)r12c24c24r12 c8c8<@(SlapBass1)
+
+	a-8&a-12a-24 >@(SlapBass2)r12a-24<@(SlapBass1)a-24r12 r12b-24b-24r12 b-8a-8
+	g8&g12g24 >@(SlapBass2)r12g24<@(SlapBass1)g24r12 >@(SlapBass2)r12c24c24r12 c8c8<@(SlapBass1)
+	f8&f12f24 >@(SlapBass2)r12f24<@(SlapBass1)f24r12 r12b-24b-24r12 b-8b-8>@(SlapBass2)
+	e-8 e-24r24e-24 r12e-24r12e-24
+}
+
+TR(1)
+	@(Piccolo)
+	v120
+	o6
+	r4.
+	Panpot 48
+	M.T(0,30,!4)
+	#TR1={
+		#MELODY1
+		#MELODY2
+	}
+	LoopPlay(#TR1)
+
+	#MELODY3
+	#MELODY4
+
+TR(2)
+	Panpot 80
+	M.T(0,20,!2.)
+	@(Clarinet)
+	EP(127)
+	o5
+	r4.
+	LoopPlay(#TR1)
+	#MELODY3
+	#MELODY4
+
+TR(5)
+	@(ChiffLead)
+	Chorus 127
+	r4.
+	o5
+	#TR5={
+		#CHORUS1
+		#CHORUS2
+	}
+	LoopPlay(#TR5)
+	#CHORUS3
+	#CHORUS4
+
+TR(9)
+	@(SlapBass1)
+	v120
+	o3
+	r4.
+	Panpot 0
+	#TR9={
+		#BASS1
+		#BASS2
+	}
+	LoopPlay(#TR9)
+	#BASS3
+	#BASS4
+
+TR(8)
+	@(SlapBass1)
+	v120
+	o3
+	r4.
+	Panpot 127
+	LoopPlay(#TR9)
+	#BASS3
+	#BASS4
+
+TR(10)
+	Key 0
+//	@(RoomSet)
+	$b{RandR(999,1728) RandV(120,127) n(Kick1),}
+	$s{RandR(999,1728) RandV(100,127) n(Snare2),}
+	$l{RandR(999,1728) RandV(126,127) n(LowTom2),}
+	$h{RandR(999,1728) RandV(90,127) n(ClosedHiHat),}
+	$o{RandR(999,1728) RandV(95,127) n(OpenHiHat),}
+	$c{RandR(999,1728) RandV(95,127) n(RideCymbal1),}
+	$R{RandR(999,1728) RandV(95,127) n(RideBell),}
+
+	Rythm {
+		v100r12s24 s8l8
+	}
+	Int RLOOP=0
+
+	#TR10={
+		Rythm {
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''sh12''lo24'
+		}
+		SyncR
+		Rythm {
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+			'bh8'h12h24 'sh8'h12'bo24' h12s24h12'bh24' 'sh8''bh12'h24
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+			'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''sh12''sh24'
+		}
+		SyncR
+		IF(RLOOP % 2 = 0) {
+			[3
+				Rythm {'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24}
+				SyncR
+			]
+			Rythm{'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''sh12''so24'}
+			SyncR
+		} ELSE {
+			IF(RLOOP % 4 = 1) {
+				[3
+					Rythm {'bhc8''hc12'h24 'sh12'c24 h12'bhc24' 'bh12''hc24''bch12'h24 'sch12'c24'bh12''hc24'}
+					SyncR
+				]
+				Rythm{'bhc8''hc12'h24 'sh12'c24 h12'bhc24' 'bh12''hc24''bch12'h24 'sch12'c24'sh12''shc24'}
+				SyncR
+			} ELSE {
+				[3
+					Rythm {'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bRh12'h24 'sRh12'R24'bh12''hR24'}
+					SyncR
+				]
+				Rythm{'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bRh12'h24 'sRh12'R24'sh12''shR24'}
+				SyncR
+			}
+		}
+		SyncR
+		RLOOP=RLOOP+1
+	}
+
+	LoopPlay(#TR10)
+
+	Rythm {
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''sh12''lo24'
+
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+		'bh8'h12h24 'sh8'h12'bo24' h12s24h12'bh24' 'sh8''bh12'h24
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''bh12'o24
+		'bh8'h12h24 'sh8'h12'bh24' h12s24h12'bh24' 'sh8''sh12''sh24'
+	}
+	SyncR
+	Rythm {
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bRh12'h24 'sRh12'R24'bh12''hR24'
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bRh12'h24 'sRh12''sR24'h12'bRo24'
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bRh12'h24 'sRh12'R24'bh12''hR24'
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''ho24''bRh12'h24 'sRh12''R24''sh12''bsRo24'
+
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bR12'h24 'sRh12'R24'bh12''hR24'
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bR12'h24 'sRh12''sR24'h12'bRh24'
+		'bhR8''hR12'h24 'sh12'R24 h12'bhR24' 'bh12''hR24''bR12''hs24'0 'sR12'R24'blh12''hR24'
+		'bhRs8' 'bhRs12' 'bhRs24' r12 'bhRs24' r12 'bhRs24'
+	}
+End

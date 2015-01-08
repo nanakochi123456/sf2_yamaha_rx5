@@ -2,151 +2,153 @@ sf2_yamaha_rx5
 =============
 YAMAHA RX-5で採取したリズムをSoundFontにしてみたものなの。
 
+(YAMAHA RX-5's SoundFont)
+
 ツールは、Polyphoneを使ってなの。
 
 注意：
 	リズムはBank128に作ることなの
 	* の記載のある音色は本来ありません。強引に作成しているなの
 
-Bank0 （普通の音色なの）
-	8	DX_CLAV
-	13	DX_MARIMBA
-	34	EBass_Low
-	35	EBass_High
-	48	Timpani
-	56	DX_Orch
-	127	GUNSHOT
+Bank0 （普通の音色なの）<br>
+	8	DX_CLAV<br>
+	13	DX_MARIMBA<br>
+	34	EBass_Low<br>
+	35	EBass_High<br>
+	48	Timpani<br>
+	56	DX_Orch<br>
+	127	GUNSHOT<br>
 
-Bank128	の共通音色
-	31	Rim2
-	37	Rim1
-	41	(LowTom3)* From Tom4
-	42	HH CLOSE
-	43	Tom4
-	44	HH PEDAL* From HH CLOSE
-	45	Tom3
-	46	HH OPEN
-	47	Tom2
-	48	Tom1
-	49	CRASH
-	50	(HighTom1)* From Tom1
-	51	Ride Edge
-	53	Ride Cup
-	54	Tambarin
-	55	Splash（本来は別売りROMの音色）
-	60	High Bongo
-	61	Low Bongo
-	62	High Conga Mute
-	63	High Conga Open
-	64	Low Conga
-	65	Timbale High
-	66	Timbale Low
-	67	Agogo High
-	68	Agogo Low
-	71	Short Whistle*
-	72	Long Whistle
-	78	Cuica
-	79	Open Cuica*
-	82	Shaker
-	85	Castanet
-	88	Hey
-	89	Wao
-	90	Ooo
+Bank128	の共通音色<br>
+	31	Rim2<br>
+	37	Rim1<br>
+	41	(LowTom3)* From Tom4<br>
+	42	HH CLOSE<br>
+	43	Tom4<br>
+	44	HH PEDAL* From HH CLOSE<br>
+	45	Tom3<br>
+	46	HH OPEN<br>
+	47	Tom2<br>
+	48	Tom1<br>
+	49	CRASH<br>
+	50	(HighTom1)* From Tom1<br>
+	51	Ride Edge<br>
+	53	Ride Cup<br>
+	54	Tambarin<br>
+	55	Splash（本来は別売りROMの音色）<br>
+	60	High Bongo<br>
+	61	Low Bongo<br>
+	62	High Conga Mute<br>
+	63	High Conga Open<br>
+	64	Low Conga<br>
+	65	Timbale High<br>
+	66	Timbale Low<br>
+	67	Agogo High<br>
+	68	Agogo Low<br>
+	71	Short Whistle*<br>
+	72	Long Whistle<br>
+	78	Cuica<br>
+	79	Open Cuica*<br>
+	82	Shaker<br>
+	85	Castanet<br>
+	88	Hey<br>
+	89	Wao<br>
+	90	Ooo<br>
 
-Bank128	の共通音色 (Eの物）
-	31	Rim2
-	37	Rim1
-	41	(LowTom3)* From ETom4
-	42	HH CLOSE
-	43	ETom4
-	44	HH PEDAL* From HH CLOSE
-	45	ETom3
-	46	HH OPEN
-	47	ETom2
-	48	ETom1
-	49	CRASH
-	50	(HighTom1)* From ETom1
-	51	Ride Edge
-	53	Ride Cup
-	54	Tambarin
-	55	Splash（本来は別売りROMの音色）
-	60	High Bongo
-	61	Low Bongo
-	62	High Conga Mute
-	63	High Conga Open
-	64	Low Conga
-	65	Timbale High
-	66	Timbale Low
-	67	Agogo High
-	68	Agogo Low
-	71	Short Whistle*
-	72	Long Whistle
-	78	Cuica
-	79	Open Cuica*
-	82	Shaker
-	85	Castanet
-	88	Hey
-	89	Wao
-	90	Ooo
+Bank128	の共通音色 (Eの物）<br>
+	31	Rim2<br>
+	37	Rim1<br>
+	41	(LowTom3)* From ETom4<br>
+	42	HH CLOSE<br>
+	43	ETom4<br>
+	44	HH PEDAL* From HH CLOSE<br>
+	45	ETom3<br>
+	46	HH OPEN<br>
+	47	ETom2<br>
+	48	ETom1<br>
+	49	CRASH<br>
+	50	(HighTom1)* From ETom1<br>
+	51	Ride Edge<br>
+	53	Ride Cup<br>
+	54	Tambarin<br>
+	55	Splash（本来は別売りROMの音色）<br>
+	60	High Bongo<br>
+	61	Low Bongo<br>
+	62	High Conga Mute<br>
+	63	High Conga Open<br>
+	64	Low Conga<br>
+	65	Timbale High<br>
+	66	Timbale Low<br>
+	67	Agogo High<br>
+	68	Agogo Low<br>
+	71	Short Whistle*<br>
+	72	Long Whistle<br>
+	78	Cuica<br>
+	79	Open Cuica*<br>
+	82	Shaker<br>
+	85	Castanet<br>
+	88	Hey<br>
+	89	Wao<br>
+	90	Ooo<br>
 
-Bank128 プリセット0 スタンダード
-	20	fmprc1
-	21	fmprc2
-	22	fmprc3
-	23	Grasscrash
-	24	Gunshot
-	35	BD2
-	36	BD1
-	38	SD1
-	40	SD2
-	＋Bank128	の共通音色
+Bank128 プリセット0 スタンダード<br>
+	20	fmprc1<br>
+	21	fmprc2<br>
+	22	fmprc3<br>
+	23	Grasscrash<br>
+	24	Gunshot<br>
+	35	BD2<br>
+	36	BD1<br>
+	38	SD1<br>
+	40	SD2<br>
+	＋Bank128	の共通音色<br>
 
-Bank128 プリセット1 付属ROM
-	20	fmprc1
-	21	fmprc2
-	22	fmprc3
-	23	Grasscrash
-	24	Gunshot
-	35	BD3*
-	36	BD3
-	38	SD3
-	40	SD3*
-	＋Bank128	の共通音色
+Bank128 プリセット1 付属ROM<br>
+	20	fmprc1<br>
+	21	fmprc2<br>
+	22	fmprc3<br>
+	23	Grasscrash<br>
+	24	Gunshot<br>
+	35	BD3*<br>
+	36	BD3<br>
+	38	SD3<br>
+	40	SD3*<br>
+	＋Bank128	の共通音色<br>
 
-Bank128 プリセット8 Rock1 ※(Rock用TOMとかが足りない)
-	20	ROCK_BD3
-	21	ROCK_SD3
-	23	Grasscrash
-	24	Gunshot
-	35	ROCK_BD2
-	36	ROCK_BD1
-	38	ROCK_SD1
-	40	ROCK_SD2
-	＋Bank128	の共通音色
+Bank128 プリセット8 Rock1 ※(Rock用TOMとかが足りない)<br>
+	20	ROCK_BD3<br>
+	21	ROCK_SD3<br>
+	23	Grasscrash<br>
+	24	Gunshot<br>
+	35	ROCK_BD2<br>
+	36	ROCK_BD1<br>
+	38	ROCK_SD1<br>
+	40	ROCK_SD2<br>
+	＋Bank128	の共通音色<br>
 
-Bank128 プリセット16 Power
-	20	POWER_BD3
-	21	POWER_SD3
-	22	POWER_SD4
-	23	POWER_SD5
-	24	Gunshot
-	35	POWER_BD2
-	36	POWER_BD1
-	38	POWER_SD1
-	40	POWER_SD2
-	＋Bank128	の共通音色
+Bank128 プリセット16 Power<br>
+	20	POWER_BD3<br>
+	21	POWER_SD3<br>
+	22	POWER_SD4<br>
+	23	POWER_SD5<br>
+	24	Gunshot<br>
+	35	POWER_BD2<br>
+	36	POWER_BD1<br>
+	38	POWER_SD1<br>
+	40	POWER_SD2<br>
+	＋Bank128	の共通音色<br>
 
-Bank128 プリセット24 Electric
-	20	fmprc1
-	21	fmprc2
-	22	fmprc3
-	23	Grasscrash
-	24	Gunshot
-	35	BD2
-	36	BD1
-	38	SD1
-	40	SD2
-	＋Bank128	の共通音色 (Eの物）
+Bank128 プリセット24 Electric<br>
+	20	fmprc1<br>
+	21	fmprc2<br>
+	22	fmprc3<br>
+	23	Grasscrash<br>
+	24	Gunshot<br>
+	35	BD2<br>
+	36	BD1<br>
+	38	SD1<br>
+	40	SD2<br>
+	＋Bank128	の共通音色 (Eの物）<br>
 
 確認されている、足りてないもの
 
@@ -156,3 +158,5 @@ JAZZキットROM
 	あ・た・し・・・・
 
 	じゃなくて、みんなでつくろうなの。
+
+by なのたん
